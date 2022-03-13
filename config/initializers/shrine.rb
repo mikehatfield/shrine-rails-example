@@ -41,7 +41,7 @@ when :s3
     {
       content_disposition:    ContentDisposition.inline(filename), # set download filename
       content_type:           type,                                # set content type
-      content_length_range:   0..(10*1024*1024),                   # limit upload size to 10 MB
+      #content_length_range:   0..(10*1024*1024),                   # limit upload size to 10 MB
     }
   }
 when :s3_multipart

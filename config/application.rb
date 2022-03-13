@@ -40,7 +40,7 @@ module ShrineRailsExample
     elsif Rails.env.production?
       :s3
     else
-      :app
+      :s3 #:app changed this to s3 for development testing
     end
   end
 end

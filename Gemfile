@@ -29,3 +29,5 @@ gem 'marcel'
 gem 'fastimage'
 
 gem 'sucker_punch'
+
+gem "streamio-ffmpeg"

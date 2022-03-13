@@ -1,0 +1,15 @@
+<li class="mb-3">
+  <div class="d-flex">
+    <div class="flex-shrink-0">
+    <h2><%= link_to "url", question_video.video_url("original") %></h2>
+    <%= video_tag question_video.video_url("original"), width: 222 %>
+    </div>
+
+    <div class="flex-grow-1 ms-3">
+      <div class="mb-3 form-check">
+        <%= f.label :_destroy, "Remove Video", class: "form-check-label" %>
+        <%= f.check_box :_destroy, class: "form-check-input" %>
+      </div>
+    </div>
+  </div>
+</li>

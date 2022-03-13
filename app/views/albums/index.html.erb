@@ -7,7 +7,6 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Cover</th>
       <th scope="col">Name</th>
       <th scope="col">Actions</th>
     </tr>
@@ -15,7 +14,6 @@
   <tbody>
     <% @albums.each do |album| %>
       <tr>
-        <td scope="row"><%= image_tag album.cover_photo_url(:small), size: "100x100", class: "img-thumbnail" %></td>
         <td scope="row"><%= album.name %></td>
         <td scope="row"><%= link_to "Edit", album, class: "btn btn-default" %></td>
       </tr>

@@ -7,41 +7,17 @@
     </ul>
   <% end %>
 
-  <div class="mb-3">
+  <!--<div class="mb-3">
     <%= f.label :name, class: "form-label" %>
     <%= f.text_field :name, class: "form-control" %>
-  </div>
-
-  <div data-controller="single-upload" data-single-upload-types-value="<%= ImageUploader::ALLOWED_TYPES.to_json %>" data-single-upload-server-value="<%= upload_server %>">
-    <div class="mb-3">
-      <%= f.label :cover_photo, class: "form-label" %>
-
-      <!-- for storing cover photo uploaded file data -->
-      <%= f.hidden_field :cover_photo,
-        value: @album.cached_cover_photo_data,
-        data: { single_upload_target: "result" },
-        id: nil %>
-
-      <!-- will be replaced by Uppy -->
-      <%= f.file_field :cover_photo,
-        class: "form-control",
-        data: { single_upload_target: "input" } %>
-    </div>
-
-    <div class="d-inline-block mt-1 mb-3">
-      <!-- static link to the thumbnail generated on attachment -->
-      <%= image_tag @album.cover_photo_url(:medium).to_s,
-        width: 300,
-        class: "img-thumbnail file-upload-preview",
-        data: { single_upload_target: "preview" } %>
-    </div>
-  </div>
+  </div>-->
+  <h2 class="text-xl my-10">Upload Your Video Clips Below:</h2>
 
   <% if @album.persisted? %>
-    <div class="mb-3" data-controller="multiple-upload" data-multiple-upload-types-value="<%= ImageUploader::ALLOWED_TYPES.to_json %>" data-multiple-upload-server-value="<%= upload_server %>">
+    <div class="mb-3" data-controller="multiple-upload" data-multiple-upload-types-value="<%= QuestionVideoUploader::ALLOWED_TYPES.to_json %>" data-multiple-upload-server-value="<%= upload_server %>">
       <!-- will be replaced by Uppy -->
-      <%= f.label :photos, "Select photos", class: "form-label" %>
-      <%= f.file_field :photos,
+      <%= f.label :question_videos, "Select Videos", class: "form-label" %>
+      <%= f.file_field :question_videos,
         multiple: true,
         class: "form-control",
         data: { multiple_upload_target: "input" } %>
@@ -49,12 +25,12 @@
   <% end %>
 
   <ul class="list-unstyled file-upload-list" id="album-photo-list">
-    <%= f.fields_for :photos do |pf| %>
-      <%= render partial: "photo", locals: { photo: pf.object, f: pf } %>
+    <%= f.fields_for :question_videos do |pf| %>
+      <%= render partial: "question_video", locals: { question_video: pf.object, f: pf } %>
     <% end %>
   </ul>
 
-  <%= f.submit "Save", class: "btn btn-primary" %>
+  <%= f.submit "Save", class: "btn btn-primary bg-blue-700" %>
   <%= link_to albums_path, class: "btn btn-light" do %>
     &larr; Back to albums
   <% end %>

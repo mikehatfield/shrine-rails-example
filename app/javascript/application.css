@@ -5,3 +5,110 @@
 .file-upload-preview[src=""] {
   visibility: hidden;
 }
+
+/* Uppy overrides */
+
+
+.uppy-Root {
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+.uppy-Dashboard-inner {
+  width: 100% !important;
+  height: 100vh !important;
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+}
+
+.uppy-Dashboard-poweredBy {
+  display: none !important;
+}
+
+.uppy-Dashboard-AddFiles-info {
+  display: block !important;
+}
+
+/* Hides default icon */
+.uppy-Dashboard-Item-previewIconWrap {
+  display: none;
+}
+
+[dir=ltr] .uppy-Dashboard-Item-fileInfoAndButtons {
+  place-content: flex-end;
+  padding-right: 25px;
+}
+
+/* Header bar */
+.uppy-DashboardContent-bar {
+  height: 60px;
+  padding: 15px;
+}
+
+/* Header cancel link */
+.uppy-DashboardContent-back, .uppy-DashboardContent-save {
+  font-size: 16px;
+}
+/* Header number of selected items title */
+.uppy-DashboardContent-title {
+  display: none;
+}
+
+.uppy-DashboardContent-addMore {
+  height: 35px;
+  width: 35px;
+}
+
+.uppy-DashboardContent-addMore > svg.uppy-c-icon {
+  width: 20px;
+  height: 15px;
+}
+
+/* Delete button */
+button.uppy-u-reset.uppy-Dashboard-Item-action.uppy-Dashboard-Item-action--remove {
+  height: 40px;
+  width: 40px;
+}
+
+/* Delete item icon */
+.uppy-Dashboard-Item-actionWrapper > .uppy-Dashboard-Item-action--remove svg.uppy-c-icon {
+  width: 100%;
+  height: 100%;
+}
+
+.uppy-Dashboard-Item-actionWrapper > .uppy-Dashboard-Item-action--remove svg.uppy-c-icon > path:nth-child(1) {
+  fill: #d80000;
+}
+
+/* Size of thumbnail container */
+.uppy-size--md .uppy-Dashboard-Item {
+  width: 245px;
+}
+
+/* Size of thumbnail */
+.uppy-Dashboard:not(.uppy-size--md) .uppy-Dashboard-Item-preview, .uppy-Dashboard:not(.uppy-size--md) .uppy-Dashboard-Item-preview {
+  height: 140px;
+  width: 245px;
+}
+/* Size of thumbnail large view */
+.uppy-Dashboard .uppy-Dashboard-Item-preview {
+  height: 140px;
+  width: 245px;
+}
+
+.uppy-Dashboard-Item-fileInfo {
+  display: none;
+}
+
+/* Make footer sticky so it shows properly fixed on ios + small mobile screens */
+.uppy-Dashboard-progressindicators {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.uppy-StatusBar-progress {
+  background-color: #3de921;
+  height: 6px;
+}
